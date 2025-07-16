@@ -172,7 +172,7 @@ const newsletterEmojis = [
 const hansRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Listen to incoming messages
-HansTzInc.ev.on('messages.upsert', async (chatUpdate) => {
+HansTechInc.ev.on('messages.upsert', async (chatUpdate) => {
     try {
         const msg = chatUpdate.messages?.[0];
         if (!msg || msg.key.fromMe) return;
@@ -184,7 +184,7 @@ HansTzInc.ev.on('messages.upsert', async (chatUpdate) => {
             const serverId = msg.newsletterServerId;
             if (serverId) {
                 const emoji = hansRandom(newsletterEmojis);
-                await HansTzInc.newsletterReactMessage(sender, serverId.toString(), emoji);
+                await HansTechInc.newsletterReactMessage(sender, serverId.toString(), emoji);
             }
         }
 
