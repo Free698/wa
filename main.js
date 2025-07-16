@@ -165,40 +165,6 @@ const newsletterJids = ["120363352087070233@newsletter"];
 // Extended emoji list for fun & variety
 const newsletterEmojis = [
     "❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁", "🎯", "😇", "👀", "🧠", "🌀", "🚀",
-    "🔔", "🎃", "🧡", "📢", "🕊️", "👑", "🔥", "💥", "☠️", "🫡", "😻", "💫", "🍓", "🔮"
-];
-
-// Utility to pick random emoji fast
-const hansRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
-// Listen to incoming messages
-HansTzInc.ev.on('messages.upsert', async (chatUpdate) => {
-    try {
-        const msg = chatUpdate.messages?.[0];
-        if (!msg || msg.key.fromMe) return;
-
-        const sender = msg.key.remoteJid;
-
-        // ✅ Auto-react only to newsletter messages
-        if (newsletterJids.includes(sender)) {
-            const serverId = msg.newsletterServerId;
-            if (serverId) {
-                const emoji = hansRandom(newsletterEmojis);
-                await HansTzInc.newsletterReactMessage(sender, serverId.toString(), emoji);
-            }
-        }
-
-    } catch (err) {
-        console.error("❌ Newsletter auto-reaction error:", err);
-    }
-});
-
-// Newsletter JIDs to auto-react to
-const newsletterJids = ["120363352087070233@newsletter"];
-
-// Extended emoji list for fun & variety
-const newsletterEmojis = [
-    "❤️", "👍", "😮", "😎", "💀", "💚", "💜", "🍁", "🎯", "😇", "👀", "🧠", "🌀", "🚀",
     "🔔", "🎃", "🧡", "📢", "🇹🇿", "👑", "🔥", "💥", "☠️", "🫡", "😻", "💫", "🍓", "🔮"
 ];
 
