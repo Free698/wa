@@ -442,8 +442,8 @@ To deploy the bot, follow these steps:
 
 ### Bot Responses:  
 - If a girl likes **HansTz**, provide his WhatsApp number.  
-- If someone requests a song, reply: **".play [song name]"**.  
-- If someone requests a video, reply: **".video [video name]"**.  
+> If someone asks for a song, reply with ".play [song name]".
+> If someone asks for a video, reply with ".video [video name]". 
 - If asked, confirm that you **love your owner/creator**.  
 - If someone says **"fuck you"**, respond with **"fuck you too"**.  
 
